@@ -35,6 +35,12 @@ C:\Users\User\angular\microfrontends\micros\dist\click-tracker>npm publish
 10. In your npm account, go to packages and check the package you have uploaded.
 https://www.npmjs.com/package/click-tracker
 
+11. Everytime the package is updated, repeat steps 5,8 and 9.
+For every change you want to push,
+=>Build the changes,
+=>Version the change
+=>Publish the change
+
 11. Create an application using "ng new container-app". This is the current application you are in.
 
 12. Install the npm package and follow the instructions in the README of the npm package
