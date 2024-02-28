@@ -5,11 +5,12 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "watch": "ng build --watch --configuration development",
+    "watch": "ng build --watch --configuration production",
     "test": "ng test"
   },
   "private": true,
   "dependencies": {
+    "@angular-extensions/elements": "^17.0.0",
     "@angular/animations": "^16.2.0",
     "@angular/common": "^16.2.0",
     "@angular/compiler": "^16.2.0",
@@ -18,7 +19,11 @@
     "@angular/platform-browser": "^16.2.0",
     "@angular/platform-browser-dynamic": "^16.2.0",
     "@angular/router": "^16.2.0",
-    "click-tracker": "^1.0.1",
+    "bootstrap": "^5.3.3",
+    "click-tracker": "file:C:/Users/User/angular/click-tracker-1.0.17.tgz",
+    "users":"file:C:/Users/User/angular/users-0.0.18.tgz",
+    "http-server": "^14.1.1",
+    "jquery": "^3.7.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"

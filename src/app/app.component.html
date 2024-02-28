@@ -1,7 +1,5 @@
-<button eventTrack (eventTrackPayload)="logPayload($event)">Action</button>
 
-<p eventTrack #e1="eventTrack" (mouseover)="trackMouseOver($event)" (eventTrackPayload)="logPayload($event)">
-  Move the mouse over me to track</p>
-
-
-<input placeholder="Focus to track" eventTrack #e2="eventTrack" (focus)="e2.trackEvent($event)" (eventTrackPayload)="logPayload($event)">
+<div class="container">
+<app-header></app-header>
+<router-outlet></router-outlet>
+</div>

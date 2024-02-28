@@ -1,4 +1,5 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, ElementRef, ViewChild,HostListener } from '@angular/core';
 import { EventTrackDirective, getProvider } from 'click-tracker';
 
 @Component({
@@ -11,17 +12,8 @@ import { EventTrackDirective, getProvider } from 'click-tracker';
 export class AppComponent {
   title = 'container-app';
 
-  constructor(private hostSelector:ElementRef){
+  constructor(private http:HttpClient){
   }
-
-  @ViewChild('e1',{static:false})e1:EventTrackDirective | undefined;
-
-  logPayload(payload:any){
-    console.log(payload)
-  }
-
-  trackMouseOver(event:any){
-     this.e1?.trackEvent(event);
-  }
+ngOnInit(){}
 }
 

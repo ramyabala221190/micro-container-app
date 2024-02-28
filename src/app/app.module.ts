@@ -1,20 +1,33 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, ErrorHandler, NgModule, NgZone } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ClickTrackerModule } from 'click-tracker';
+import { ClickTrackerModule, ClientErrorTrackService, ErrorTrackInterceptorService, eventTrackTarget, maxEventsTracked } from 'click-tracker';
+import { LazyElementsModule } from '@angular-extensions/elements';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
   ],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ClickTrackerModule
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  /*
+for angular element integration
+  */
+  constructor(private ngZone:NgZone){
+    (window as any).ngZone=this.ngZone; //store ngZone reference in the parent object
+  }
+ }
