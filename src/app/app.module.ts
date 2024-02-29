@@ -3,8 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ClickTrackerModule, ClientErrorTrackService, ErrorTrackInterceptorService, eventTrackTarget, maxEventsTracked } from 'click-tracker';
-import { LazyElementsModule } from '@angular-extensions/elements';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 
