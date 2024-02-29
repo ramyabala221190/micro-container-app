@@ -1,0 +1,16 @@
+kubernetes:
+  chart: angular-micro-container
+
+pod:
+ containerName: "container"
+ imageName: ""
+ containerPort: 80
+
+services:
+  name: "service"
+  type: NodePort  #due to external IP pending issue, changed from LoadBalancer to NodePort
+  devAppPort: 8081
+  uatAppPort: 8082
+  prodAppPort: 8085
+
+environment: ""
