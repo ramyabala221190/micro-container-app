@@ -1,5 +1,3 @@
-kubernetes:
-  chart: angular-micro-container
 
 pod:
  containerName: "container"

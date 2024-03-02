@@ -1,30 +1,29 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
- name: {{.Values.kubernetes.chart}}-deployment-{{.Values.environment}}
+ name: {{.Chart.name}}-deployment-{{.Values.environment}}
  labels:
-  app: {{.Values.kubernetes.chart}}-deployment-{{.Values.environment}}
+  app: {{.Chart.name}}-deployment-{{.Values.environment}}
 
 spec:
   selector:
     matchLabels:
-      app: {{.Values.kubernetes.chart}}-deployment-{{.Values.environment}}
+      app: {{.Chart.name}}-deployment-{{.Values.environment}}
 
   template:
     metadata:
       labels:
-        app: {{.Values.kubernetes.chart}}-deployment-{{.Values.environment}}
+        app: {{.Chart.name}}-deployment-{{.Values.environment}}
 
     spec:
      containers:
-       - name : {{.Values.kubernetes.chart}}-{{.Values.pod.containerName}}-{{.Values.environment}}
+       - name : {{.Chart.name}}-{{.Values.pod.containerName}}-{{.Values.environment}}
          image: {{.Values.pod.imageName}}
          ports:
           - containerPort : {{.Values.pod.containerPort}} #this should match the port nginx listening on
          envFrom :
            - configMapRef:
                name : {{.Values.environment}}-app-config
-#we are loading all environment variables from the config map with name :dev-app-config
 
 
 #helm install helm-release helm-test
