@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
- name: {{.Chart.name}}-{{.Values.services.name}}-{{.Values.environment}}  #service name
+ name: {{.Chart.Name}}-{{.Values.services.name}}-{{.Values.environment}}  #service name
 spec:
  type: {{.Values.services.type}}  #type of service
  selector:
-    app: {{.Chart.name}}-deployment-{{.Values.environment}} #selecting the pods
+    app: {{.Chart.Name}}-deployment-{{.Values.environment}} #selecting the pods
  ports:  # this is the port application will be accessed on if using LoadBalancer type
  {{if eq .Values.environment "dev"}}
  - port: {{.Values.services.devAppPort}}
