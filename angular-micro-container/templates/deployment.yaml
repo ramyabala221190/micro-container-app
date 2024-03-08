@@ -21,9 +21,15 @@ spec:
          image: {{.Values.pod.imageName}}
          ports:
           - containerPort : {{.Values.pod.containerPort}} #this should match the port nginx listening on
-         envFrom :
-           - configMapRef:
-               name : {{.Values.environment}}-app-config
+         volumeMounts:
+         - name: config-vol-2
+           mountPath: /config
+           readOnly: true
+     volumes:
+     - name: config-vol-2
+       configMap:
+         name: {{.Values.environment}}-app-config
+#we are loading all environment variables from the config map with name :dev-app-config
 
 
 #helm install helm-release helm-test

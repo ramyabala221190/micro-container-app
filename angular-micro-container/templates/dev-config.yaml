@@ -5,6 +5,7 @@ metadata:
 
 data:
   env: "dev"
+  description: "Application is running in development environment on port 8081"
 
 
 
