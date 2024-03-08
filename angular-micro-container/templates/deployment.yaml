@@ -28,7 +28,7 @@ spec:
      volumes:
      - name: config-vol-2
        configMap:
-         name: {{.Values.environment}}-app-config
+         name: {{.Values.environment}}-app-container-config
 #we are loading all environment variables from the config map with name :dev-app-config
 
 
