@@ -13,3 +13,5 @@ services:
   prodAppPort: 8085
 
 environment: ""
+
+config: app-container-config
