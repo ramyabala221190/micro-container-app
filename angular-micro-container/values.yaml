@@ -3,6 +3,7 @@ pod:
  containerName: "container"
  imageName: ""
  containerPort: 80
+ volume: config-vol-2
 
 services:
   name: "service"

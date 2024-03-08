@@ -22,11 +22,11 @@ spec:
          ports:
           - containerPort : {{.Values.pod.containerPort}} #this should match the port nginx listening on
          volumeMounts:
-         - name: config-vol-2
+         - name: {{.Values.pod.volume}}
            mountPath: /config
            readOnly: true
      volumes:
-     - name: config-vol-2
+     - name: {{.Values.pod.volume}}
        configMap:
          name: {{.Values.environment}}-app-container-config
 #we are loading all environment variables from the config map with name :dev-app-config
