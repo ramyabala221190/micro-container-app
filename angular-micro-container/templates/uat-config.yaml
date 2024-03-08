@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: uat-app-config
+  name: uat-app-container-config
 
 data:
   env: "uat"

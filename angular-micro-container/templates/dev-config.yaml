@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: dev-app-config
+  name: dev-app-container-config
 
 data:
   env: "dev"

@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: prod-app-config
+  name: prod-app-container-config
 
 data:
   env: "prod"
