@@ -5,6 +5,4 @@ metadata:
 
 data:
   env: "uat"
-  description: "Application is running in uat environment on port 8082"
-
 

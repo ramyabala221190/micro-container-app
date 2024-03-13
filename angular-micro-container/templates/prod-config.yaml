@@ -5,6 +5,4 @@ metadata:
 
 data:
   env: "prod"
-  description: "Application is running in production environment on port 8085"
-
 

@@ -9,7 +9,7 @@ spec:
  ports:  # this is the port application will be accessed on if using LoadBalancer type
  {{if eq .Values.environment "dev"}}
  - port: {{.Values.services.devAppPort}}
- - nodePort: {{.Values.services.nodeDevAppPort}}
+   nodePort: {{.Values.services.nodeDevAppPort}}
  {{else if eq .Values.environment "uat"}}
  - port: {{.Values.services.uatAppPort}}
  {{else if eq .Values.environment "prod"}}
