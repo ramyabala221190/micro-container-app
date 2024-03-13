@@ -3,8 +3,6 @@ pod:
  containerName: "container"
  imageName: ""
  containerPort: 80
- volume: config-vol-2
- mountPath: config
 
 services:
   name: "service"
@@ -12,7 +10,14 @@ services:
   devAppPort: 8081
   uatAppPort: 8082
   prodAppPort: 8085
+  nodeDevAppPort: 30547
+
 
 environment: ""
 
-config: app-container-config
+config: 
+  name: app-container-config
+  volume: app-container-config-vol
+  mountPath: config
+
+

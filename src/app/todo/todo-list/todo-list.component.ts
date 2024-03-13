@@ -9,6 +9,6 @@ export class TodoListComponent {
 
   //todoAppUrl:string="http://localhost:8082/micro-front-end-1.js"; //http-server port
 
-  todoAppUrl:string="http://localhost:31150/micro-front-end-1.js"; //NodePort 
+  todoAppUrl:string="http://localhost:31508/micro-front-end-1.js"; //NodePort 
 
 }
