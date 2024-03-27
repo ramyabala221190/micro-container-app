@@ -5,7 +5,7 @@ metadata:
 
 data:
   containerPort:  "{{.Values.pod.containerPort}}"
-  dockerHost: "{{.Values.dockerHost}}",
+  dockerHost: "{{.Values.dockerHost}}"
   remoteHostName: {{.Values.remoteA.name}}
 
 
