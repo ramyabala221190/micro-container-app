@@ -23,10 +23,10 @@ spec:
           - containerPort : {{.Values.pod.containerPort}} #this should match the port nginx listening on
          volumeMounts:
          - name: {{.Values.config.volume}}
-           mountPath: /{{.Values.config.mountPath}}
+           mountPath: /{{.Values.config.mountPath}}-{{.Values.environment}}
            readOnly: true
          - name: common-{{.Values.config.volume}}
-           mountPath: /{{.Values.config.mountPath}}
+           mountPath: /{{.Values.config.mountPath}}-{{.Values.environment}}
            readOnly: true
          env:
            - name: remoteAPort
