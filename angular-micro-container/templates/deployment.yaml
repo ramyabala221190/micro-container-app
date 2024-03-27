@@ -25,10 +25,43 @@ spec:
          - name: {{.Values.config.volume}}
            mountPath: /{{.Values.config.mountPath}}
            readOnly: true
+         - name: common-{{.Values.config.volume}}
+           mountPath: /{{.Values.config.mountPath}}
+           readOnly: true
+         env:
+           - name: remoteAPort
+             valueFrom:
+               configMapKeyRef:
+                  name: {{.Values.environment}}-{{.Values.config.name}}
+                  key: remoteAPort
+           - name: env
+             valueFrom:
+               configMapKeyRef:
+                  name: {{.Values.environment}}-{{.Values.config.name}}
+                  key: env
+           - name: containerPort
+             valueFrom:
+               configMapKeyRef:
+                  name: common-{{.Values.config.name}}
+                  key: containerPort
+           - name: dockerHost
+             valueFrom:
+               configMapKeyRef:
+                  name: common-{{.Values.config.name}}
+                  key: dockerHost
+           - name: remoteHostName
+             valueFrom:
+               configMapKeyRef:
+                  name: common-{{.Values.config.name}}
+                  key: remoteHostName
      volumes:
      - name: {{.Values.config.volume}}
        configMap:
          name: {{.Values.environment}}-{{.Values.config.name}}
+     - name: common-{{.Values.config.volume}}
+       configMap:
+         name: common-{{.Values.config.name}}
+
 #we are loading all environment variables from the config map with name :dev-app-config
 
 

@@ -4,6 +4,7 @@ metadata:
   name: dev-app-container-config
 
 data:
-  env: "dev"
+  env:  {{.Values.environment}}
+  remoteAPort: "{{.Values.remoteA.dev}}"
 
 

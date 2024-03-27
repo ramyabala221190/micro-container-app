@@ -4,5 +4,7 @@ metadata:
   name: prod-app-container-config
 
 data:
-  env: "prod"
+  env:  {{.Values.environment}}
+  remoteAPort: "{{.Values.remoteA.prod}}"
+
 

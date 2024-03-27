@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: common-app-container-config
+
+data:
+  containerPort:  "{{.Values.pod.containerPort}}"
+  dockerHost: "{{.Values.dockerHost}}",
+  remoteHostName: {{.Values.remoteA.name}}
+
+

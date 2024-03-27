@@ -1,0 +1,5 @@
+{
+    "env":"${env}",
+    "remoteAPort":"${remoteAPort}",
+    "remoteHostName":"${remoteHostName}"
+}

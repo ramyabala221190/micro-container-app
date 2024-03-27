@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ConfigService, appConfigModel } from 'src/app/config.service';
 
 @Component({
   selector: 'app-todo-list',
@@ -7,8 +8,17 @@ import { Component } from '@angular/core';
 })
 export class TodoListComponent {
 
-  //todoAppUrl:string="http://localhost:8082/micro-front-end-1.js"; //http-server port
+  constructor(private configService:ConfigService){}
 
-  todoAppUrl:string="http://localhost:31508/micro-front-end-1.js"; //NodePort 
+  todoAppUrl:string="";
+
+  //todoAppUrl:string="http://localhost:8081/micro-front-end-1.js"; //http-server port
+
+  //todoAppUrl:string="http://localhost:31508/micro-front-end-1.js"; //NodePort 
+
+  ngOnInit(){
+    let configurationDetails:appConfigModel|undefined=this.configService.retreiveConfigurationDetails();
+    this.todoAppUrl=`http://localhost:${configurationDetails?.remoteAPort}/${configurationDetails?.remoteHostName}.js`;
+  }
 
 }

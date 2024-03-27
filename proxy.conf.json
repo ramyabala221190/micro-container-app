@@ -1,0 +1,9 @@
+{
+    "/micro-front-end-1/assets/*":{
+        "target": "http://localhost:8081",
+        "secure": false,
+        "pathRewrite": {
+            "^/micro-front-end-1/assets/": "/assets/"
+          }
+    }
+}

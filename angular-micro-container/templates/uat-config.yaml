@@ -4,5 +4,6 @@ metadata:
   name: uat-app-container-config
 
 data:
-  env: "uat"
+  env:  {{.Values.environment}}
+  remoteAPort: "{{.Values.remoteA.uat}}"
 

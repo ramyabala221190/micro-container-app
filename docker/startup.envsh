@@ -1,0 +1,6 @@
+#!/bin/bash
+echo "Starting container."
+#cp /usr/share/nginx/html/assets/configurations/config-$(cat /config/env).json /usr/share/nginx/html/assets/configurations/config.json
+envsubst < /usr/share/nginx/html/assets/configurations/config-temp.json > /usr/share/nginx/html/assets/configurations/config.json
+echo "Runtime environment variables. target environment using volume=$(cat /config/env); target environment using environment variables: ${env}" 
+nginx -g 'daemon off;'

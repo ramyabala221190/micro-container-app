@@ -7,11 +7,22 @@ pod:
 services:
   name: "service"
   type: NodePort  #due to external IP pending issue, changed from LoadBalancer to NodePort
-  devAppPort: 8081
-  uatAppPort: 8082
-  prodAppPort: 8085
-  nodeDevAppPort: 30547
+  app:
+   dev: 8081
+   uat: 8082
+   prod: 8085
+  node:
+   dev: 30547
+   uat: 30548
+   prod: 30549
 
+remoteA:
+   name: micro-front-end-1
+   dev: 31508
+   uat: 31509
+   prod: 31510
+
+dockerHost: 172.17.0.1
 
 environment: ""
 
